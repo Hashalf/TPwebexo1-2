@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TP1 Programmation Web</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            hr{
+                color : blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> TP1 DHTML: calculer le carré d'un nombre</h1>
+        <hr/>
+        <center style="background-color:black">
+            <div>
+                <label style="color:white;"> Entrez un nombre</label> <input type="text" name="nombre" id="nombre"/><input type="button" value="Calculer" onclick="carre();"/>
+            </div>
+            <div id="result" style="color:white;">
+                
+            </div>
+        </center>
+    <script>
+           function carre()
+           {
+               
+               var nombre = document.getElementById("nombre").value;
+               
+               document.getElementById("result").innerHTML="Le carre de <label style=\"background-color:red\">"+nombre+"</label> est <label style=\"background-color:green\">"+(nombre*nombre)+"</label>";
+           }
+    </script>
+    </body>
+</html>
