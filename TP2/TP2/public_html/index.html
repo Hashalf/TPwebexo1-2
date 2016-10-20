@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+@MEMA CISSE
+@BAH MAMOUDOU
+@ADANOU KOSSI
+-->
+<html>
+ <head>
+      <title>TP1</title>
+      <meta name="Author" CONTENT="CHENU Guy">
+      
+      <script language="JavaScript"> 
+
+function ajout(){
+    var matiere = prompt("Entrez la matiere");
+    var note = prompt("Entrez la note");
+    
+    var listematier = document.getElementById("listematier");
+    
+    var ligne = "<tr> <td>" + matiere+ "</td> <td>" +note+ "</td> <td>";
+    
+    
+               
+    ligne += '<img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>';
+    ligne += '<img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>';
+    ligne += "</td> </tr>";
+    
+    listematier.innerHTML += ligne;
+    moyenne();
+}
+
+function modifier(self){
+    var matiere = prompt("Entrez la matiere");
+    var note = prompt("Entrez la note");
+    
+    self.parentElement.parentElement.children[0].innerHTML = matiere;
+    self.parentElement.parentElement.children[1].innerHTML = note;
+}
+function supprimer(self){
+    if(confirm("Voulez vous supprimer")){
+        self.parentElement.parentElement.remove();
+        
+        moyenne();
+    }
+}
+
+function moyenne(){
+    var listematier = document.getElementById("listematier");
+    
+    var n = listematier.children.length;
+    
+    var somme = 0;
+    for(var i=0; i<n; i++){
+        somme += parseInt(listematier.children[i].children[1].innerHTML);
+    }
+    
+    document.getElementById("moyenne").innerHTML =  somme/n;
+    //alert(somme/n);
+}
+
+// fin JS --> 
+</script>
+
+</head>
+<body onload="moyenne()">
+    
+    
+    <table border="1">
+        
+        <button onclick="ajout()">Ajouter une matiere</button>
+   <br><br>
+   
+   <caption>Liste des matieres</caption>
+   <select>
+      
+      <option>GL
+      <option>AD
+      <option>IA
+   </select>
+
+   <thead> <!-- En-tête du tableau -->
+       <tr>
+           <th>Matieres</th>
+           <th>Notes</th>
+           <th>Actions</th>
+       </tr>
+   </thead>
+
+   <tfoot> <!-- Pied de tableau -->
+       <tr>
+           
+            <th colspan="2"> Moyenne</th>
+            <th id="moyenne">
+                
+              
+            
+         var  moyenne= document.getElementById("moy");
+         
+          alert(somme/n);
+            
+            </th>
+           
+       </tr>
+   </tfoot>
+
+   <tbody id="listematier"> <!-- Corps du tableau -->
+       <tr>
+           <td>Reseau</td>
+           <td>12</td>
+           <td>
+               <img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+       </tr>
+       <tr>
+           <td>SI</td>
+           <td>13</td>
+        
+           <td><img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+           
+    
+       </tr>
+       <tr>
+           <td>SE</td>
+           <td>14</td>
+           <td><img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+       </tr>
+       <tr>
+           <td>IHM</td>
+           <td>11</td>
+           <td><img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+       </tr>
+       <tr>
+           <td>EI</td>
+           <td>13 </td>
+           <td><img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+       </tr>
+       <tr>
+           <td>GP</td>
+           <td>19</td>
+           <td><img src="crayon.png" width="32" height="32" onclick="modifier(this)"/>
+               <img src="suprimer.jpg" width="32" height="32" onclick="supprimer(this)"/>
+           </td>
+       </tr>
+   </tbody>
+</table>
+    
+    
+    
+
+</body>
+</html>
